@@ -7,12 +7,12 @@ role Rectangle {
     my ($end_row, $end_col) = $end.split(".");
     %(
       start => %(
-        row => $start_row ,
-        col => $start_col ,
+        row => $start_row.Int ,
+        col => $start_col.Int ,
       ),
       end => %(
-        row => $end_row ,
-        col => $end_col ,
+        row => $end_row.Int ,
+        col => $end_col.Int ,
       )
     )
   }
@@ -23,6 +23,12 @@ role Rectangle {
     my $colmin = @[%coords.<start>.<col>, %coords.<end>.<col>].min;
     my $colmax = @[%coords.<start>.<col>, %coords.<end>.<col>].max;
     my $count = (%coords.<start>.<row> - %coords.<end>.<row>).abs;
+
+    say $colmin;
+    say $colmax;
+    say $_row;
+    say @[%coords.<start>.<row>, %coords.<end>.<row>];
+    say @[%coords.<start>.<row>, %coords.<end>.<row>].minmax;
 
     qq:to/:::/;
     select $_row.$colmin,$_row.$colmax
