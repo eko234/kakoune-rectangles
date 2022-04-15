@@ -1,4 +1,4 @@
-declare-options str kakoune_rectangles_script_path "%val{config}/plugins/kakoune-rectangles/kakoune-rectangles.raku"
+declare-option str kakoune_rectangles_script_path "%val{config}/plugins/kakoune-rectangles/kakoune-rectangles.raku"
 
 define-command rectangle -override %{
   evaluate-commands %sh{
