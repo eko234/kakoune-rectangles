@@ -1,0 +1,24 @@
+define-command rectangle -override %{
+  evaluate-commands %sh{
+    raku ~/kakoune-rectangles/kakoune-rectangles.raku CLASSIC "$kak_selection_desc"
+  }
+}
+
+define-command infr -override %{
+  info %sh{
+    raku ~/kakoune-rectangles/kakoune-rectangles.raku CLASSIC "$kak_selection_desc"
+  }
+}
+
+  # evaluate-commands %sh{
+define-command fuk -override %{
+  evaluate-commands %sh{
+    echo "
+      try {
+        echo hi
+      } catch {
+        echo bye
+      }
+    "
+  }
+}
