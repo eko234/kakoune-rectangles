@@ -24,12 +24,6 @@ role Rectangle {
     my $colmax = @[%coords.<start>.<col>, %coords.<end>.<col>].max;
     my $count = (%coords.<start>.<row> - %coords.<end>.<row>).abs;
 
-    say $colmin;
-    say $colmax;
-    say $_row;
-    say @[%coords.<start>.<row>, %coords.<end>.<row>];
-    say @[%coords.<start>.<row>, %coords.<end>.<row>].minmax;
-
     qq:to/:::/;
     select $_row.$colmin,$_row.$colmax
     execute-keys $count$command
