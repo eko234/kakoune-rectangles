@@ -13,19 +13,6 @@ define-command rectangle -override %{
     printf "select $row.$colmin,$row.$colmin\n"
     printf "execute-keys $computedcount%s\n" "C"
     printf "execute-keys <a-K>\\\n<ret>\n"
-    printf "execute-keys ?[^\\\n]{,$length}<ret>\n"
-    printf "info %s\n" $offset
+    [[ $length -gt 0 ]] && printf "execute-keys ?[^\\\n]{,$length}<ret>\n"
   }
 }
-
-# NOTE: seems that the last char that is a newline matches, giving the impression that the count is wrong
-# NOTE: maybe moving the range from the first grep could help
-# xxZxxxxxxxxxxxxxx
-# xxxxxxxxxxxxxx
-# xx
-# xxxxxZxxxxxx
-# sadfasdfas
-#   hola
-#   perro
-#   care
-#   chumba
