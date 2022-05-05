@@ -15,3 +15,6 @@ have a weird length.
 ![2](https://github.com/eko234/kakoune-rectangles/blob/main/rect2.png)
 ![3](https://github.com/eko234/kakoune-rectangles/blob/main/rect3.png)
 ![4](https://github.com/eko234/kakoune-rectangles/blob/main/rect4.png)
+
+## TODO
+provide an easy way to yank rectangles as newlines are needed for it to keep the usually desired shape
